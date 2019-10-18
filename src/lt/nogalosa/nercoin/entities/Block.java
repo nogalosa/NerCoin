@@ -14,6 +14,10 @@ public class Block {
     private int difficulityTarget;
     private TransactionManager transactionManager;
 
+    public Block() {
+        transactionManager = new TransactionManager();
+    }
+
     public String getPrevBlockHash() {
         return prevBlockHash;
     }
@@ -62,7 +66,7 @@ public class Block {
         this.difficulityTarget = difficulityTarget;
     }
 
-    public void setTransactionManager(TransactionManager transactionManager) {
-        this.transactionManager = transactionManager;
+    public TransactionManager getTransactionManager() {
+        return transactionManager;
     }
 }
