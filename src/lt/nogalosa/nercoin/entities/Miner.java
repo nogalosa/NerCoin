@@ -14,5 +14,6 @@ public class Miner extends Thread{
             block.incrementNonce();
             System.out.println(block.getHash() + " > " + block.getNonce());
         }
+        System.out.println("Success!");
     }
 }

@@ -23,7 +23,7 @@ public class Main {
             Transaction transaction = randomTransactions.get(random.nextInt(randomTransactions.size()));
             block.getTransactionManager().addTransaction(transaction);
         }
-        block.setDifficulityTarget("0");
+        block.setDifficulityTarget("2");
         Miner blockMiner = new Miner(block);
         blockMiner.start();
 
