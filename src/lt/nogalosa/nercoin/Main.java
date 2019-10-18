@@ -1,6 +1,7 @@
 package lt.nogalosa.nercoin;
 
 import lt.nogalosa.nercoin.entities.Block;
+import lt.nogalosa.nercoin.entities.Miner;
 import lt.nogalosa.nercoin.entities.Transaction;
 import lt.nogalosa.nercoin.managers.TransactionManager;
 import lt.nogalosa.nercoin.managers.UserManager;
@@ -22,6 +23,9 @@ public class Main {
             Transaction transaction = randomTransactions.get(random.nextInt(randomTransactions.size()));
             block.getTransactionManager().addTransaction(transaction);
         }
+        block.setDifficulityTarget("0");
+        Miner blockMiner = new Miner(block);
+        blockMiner.start();
 
     }
 
