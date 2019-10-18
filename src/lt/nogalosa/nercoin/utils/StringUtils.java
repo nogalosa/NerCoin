@@ -5,7 +5,11 @@ import lt.nogalosa.nercoin.hash.NerHash;
 import java.util.Random;
 
 public class StringUtils {
-    private static Random random = new Random();
+    private static Random random;
+
+    static {
+        random = new Random();
+    }
 
     public static String generateRandomString() {
         int leftLimit = 97; // letter 'a'
