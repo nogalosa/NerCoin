@@ -24,6 +24,7 @@ public class Main {
             block.getTransactionManager().addTransaction(transaction);
         }
         block.setDifficulityTarget("2");
+        block.generateMerkelTreeHash();
         Miner blockMiner = new Miner(block);
         blockMiner.start();
 
