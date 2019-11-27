@@ -15,6 +15,7 @@ public class Block {
     private int nonce;
     private String difficulityTarget;
     private TransactionManager transactionManager;
+    private boolean mined;
 
     public Block() {
         transactionManager = new TransactionManager();
@@ -82,6 +83,14 @@ public class Block {
     public String getHash() {
         NerHash hash = new NerHash(prevBlockHash + timestamp + version + merkelRootHash + nonce + difficulityTarget);
         return hash.hash();
+    }
+
+    public boolean isMined() {
+        return mined;
+    }
+
+    public void setMined(boolean mined) {
+        this.mined = mined;
     }
 
     public String toString() {
